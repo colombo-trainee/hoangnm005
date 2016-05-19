@@ -130,8 +130,8 @@
 </head>
 <body>
 <?php
-    $monthnames = array("January","Februrary","March","April","May", "June","July","August","September","October","November","Decemeber");
-    $monthDays = array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+    $monthnames = array(0,"January","Februrary","March","April","May", "June","July","August","September","October","November","Decemeber");
+    $monthDays = array(0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
     $now = getdate();
     echo '<div id = "main">';
     echo '<div id="calendar">';
@@ -148,7 +148,7 @@
             for($i=0;$i<5;$i++) {
                 if ($week == 0) {
                     echo '<div class="tuan">';
-                    $ngay_truoc = $monthDays[$now["mon"] - 1] - 6 + $i;
+                    $ngay_truoc = $monthDays[$now["mon"] - 1] - 5 + $i;
                     if ($i % 2 == 0) {
                         echo '<div class= "ngay_ngoai" style="background-color: white">' . $ngay_truoc . '</div>';
                     }
@@ -158,7 +158,7 @@
                 $week++;
             }
             if ($week != 0) {
-                $ngay_truoc = $monthDays[$now["mon"] - 1] - 6 + $i+1;
+                $ngay_truoc = $monthDays[$now["mon"] - 1] - 5 + $i+1;
                 if ($i % 2 == 0) {
                     echo '<div class= "ngay_ngoai" style="background-color: white">' . $ngay_truoc . '</div>';
                 }
